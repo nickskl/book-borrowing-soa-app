@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link href="../../static/font-awesome/css/font-awesome.min.css" th:href="@{/font-awesome/css/font-awesome.min.css}" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+
+<div th:fragment="header">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/}">
+                    <i class="fa fa-lg"></i> LAB4
+                </a>
+                <ul class="nav navbar-nav">
+                    <li><a href="#" th:href="@{/book}">Books</a></li>
+                    <li><a href="#" th:href="@{/book/new}">Add a new book</a></li>
+                    <li><a href="#" th:href="@{/storage}">Storages</a></li>
+                    <li><a href="#" th:href="@{/storage/new}">New Storage</a></li>
+                    <li><a href="#" th:href="@{/borrow/request}">Borrow book</a></li>
+                    <li th:if="${isAdmin == true}">
+                        <a href="#" th:href="@{/statistics}">Statistics</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li th:if="${isAuthenticated != true}">
+                        <a href="http://localhost:8081/oauth/authorize?response_type=code&amp;client_id=gatewayClient&amp;redirect_uri=http://localhost:8099/authorized&amp;scope=read"><span class="glyphicon glyphicon-log-in"></span></a></li>
+                    <li th:if="${isAuthenticated == true}">
+                        <a href="http://localhost:8081/logout"><span class="glyphicon glyphicon-log-out"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container"></div>
+</body>
+</html>

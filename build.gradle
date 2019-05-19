@@ -1,0 +1,26 @@
+group 'rsoi-labs'
+version '0.1'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.1'
+}
+
+task buildAll {
+}
+
+buildAll.dependsOn ':book-service:build'
+buildAll.dependsOn ':user-service:build'
+buildAll.dependsOn ':storage-service:build'
+buildAll.dependsOn ':book-borrowing-service:build'
+buildAll.dependsOn ':gateway-service:build'
+buildAll.dependsOn ':gui-service:build'
+buildAll.dependsOn ':statistics-service:build'
+
+task testAll {
+}
+
+testAll.dependsOn ':book-service:test'
+testAll.dependsOn ':user-service:test'
+testAll.dependsOn ':storage-service:test'
+testAll.dependsOn ':book-borrowing-service:test'
+testAll.dependsOn ':gateway-service:test'

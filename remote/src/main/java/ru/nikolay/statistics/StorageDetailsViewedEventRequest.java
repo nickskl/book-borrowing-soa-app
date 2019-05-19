@@ -1,0 +1,15 @@
+package ru.nikolay.statistics;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class StorageDetailsViewedEventRequest {
+    private String storageId;
+    private Date timestamp;
+}

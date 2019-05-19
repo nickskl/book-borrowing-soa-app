@@ -1,0 +1,11 @@
+package ru.nikolay.auth;
+
+import lombok.Data;
+import org.springframework.stereotype.Component;
+
+@Data
+@Component
+public class ServiceTokens {
+    private String accessToken;
+    private String refreshToken;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>LAB6 RSOI | Statistics</title>
+    <th:block th:include="header/headerinc :: head"></th:block>
+</head>
+<body>
+<div class="container">
+    <th:block th:include="header/header :: header"></th:block>
+    <h2>Statistics:</h2>
+    <div>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Books borrowed:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${borrowings}">borrowings</p></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Number of book viewed today:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${bookviews}">bookviews</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Number of storages viewed today:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${storageviews}">storageviews</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

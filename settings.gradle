@@ -1,0 +1,10 @@
+rootProject.name = 'rsoi-lab-2'
+include 'book-service'
+include 'user-service'
+include 'storage-service'
+include 'book-borrowing-service'
+include 'gateway-service'
+include 'remote'
+include 'gui-service'
+include 'statistics-service'
+

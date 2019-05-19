@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>LAB4 RSOI | Add book</title>
+    <th:block th:include="header/headerinc :: head"></th:block>
+</head>
+<body>
+<div class="container">
+    <th:block th:include="header/header :: header"></th:block>
+    <h2>Book details</h2>
+    <div>
+        <form class="form-horizontal" th:object="${book}" th:action="@{/book/new}" method="post">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Title:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{title}"/>
+                    <span th:errors="*{title}" class="error" style="color:red"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Author:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{author}"/>
+                    <span th:errors="*{author}" class="error" style="color:red"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Description:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{description}"/>
+                    <span th:errors="*{description}" class="error" style="color:red"></span>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
